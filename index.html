@@ -1,16 +1,14 @@
-```html id="fullcertportfolio"
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Portfolio | Security Software Developer</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
         :root {
+            /* Soft Pastel Accents */
             --pastel-violet: #d8b4fe;
             --pastel-pink: #fbcfe8;
             --pastel-blue: #bae6fd;
@@ -19,39 +17,44 @@
         }
 
         body {
-            background:
-                radial-gradient(at 0% 0%, #0f172a, transparent 50%),
-                radial-gradient(at 50% 0%, #1e1b4b, transparent 50%),
-                radial-gradient(at 100% 100%, #1e3a8a, transparent 50%),
-                #020617;
+            background: 
+                radial-gradient(at 0% 0%, #0f172a 0px, transparent 50%),
+                radial-gradient(at 50% 0%, #1e1b4b 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #312e81 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #4c1d95 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #1e3a8a 0px, transparent 50%);
+            background-color: #020617;
             color: #f8fafc;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
+        /* Glassmorphism */
         .glass-card {
             background: var(--glass);
             backdrop-filter: blur(16px);
             border: 1px solid var(--border);
             border-radius: 1.5rem;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
             border-color: var(--pastel-violet);
-            transform: translateY(-6px);
-            box-shadow: 0 10px 30px rgba(216, 180, 254, 0.25);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(216, 180, 254, 0.3);
         }
 
-        .accent-text {
+        .accent-text { 
             background: linear-gradient(to right, var(--pastel-blue), var(--pastel-violet), var(--pastel-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
         }
 
-        .accent-bg {
-            background: linear-gradient(135deg, #a78bfa, #f472b6);
+        .accent-bg { 
+            background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
         }
 
         .bento-grid {
@@ -67,90 +70,68 @@
         @media (max-width: 640px) {
             .bento-grid { grid-template-columns: 1fr; }
         }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+        .badge:hover {
+            background: var(--pastel-violet);
+            color: #1e1b4b;
+        }
     </style>
 </head>
-
 <body class="p-6 md:p-12">
 
-<header class="text-center max-w-7xl mx-auto mb-12">
-    <h1 class="text-5xl font-bold">
-        My <span class="accent-text">Portfolio</span>
-    </h1>
-    <p class="text-blue-200/70 mt-2">CSA30203 Security Project</p>
-</header>
-
-<main class="max-w-7xl mx-auto bento-grid">
-
-    <!-- ABOUT -->
-    <section class="glass-card p-8 col-span-2">
-        <h2 class="text-xl font-bold mb-4">Security Developer</h2>
-        <p class="text-blue-100/70 text-sm">
-            Security-focused developer integrating protection into software lifecycle.
+    <header class="max-w-7xl mx-auto mb-16 text-center">
+        <h1 class="text-6xl font-black mb-4 tracking-tighter">
+            <span class="text-white">My</span> <span class="accent-text">Portfolio</span>
+        </h1>
+        <p class="text-blue-200/70 text-lg font-medium tracking-wide">
+            CSA30203: Special Topics in Computer Network Security
         </p>
-    </section>
+    </header>
 
-    <!-- SKILLS -->
-    <section class="glass-card p-8 col-span-2">
-        <h2 class="text-xl font-bold mb-4">Skills</h2>
-        <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 bg-white/10 rounded">Python</span>
-            <span class="px-3 py-1 bg-white/10 rounded">Linux</span>
-            <span class="px-3 py-1 bg-white/10 rounded">Networking</span>
-        </div>
-    </section>
+    <main class="max-w-7xl mx-auto bento-grid">
+        
+        <section class="glass-card p-8 col-span-2">
+            <h2 class="text-2xl font-bold">Software Developer (Security-Focused)</h2>
+            <p class="text-blue-100/80 mt-4 text-sm">
+                I focus on building secure software systems.
+            </p>
+        </section>
 
-    <!-- CERTIFICATES (ADDED SECTION) -->
-    <section class="glass-card p-8 col-span-4">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <i class="fas fa-certificate text-pink-200"></i>
-            Certificates of Learning
-        </h2>
+        <section class="glass-card p-8 col-span-2">
+            <h2 class="text-xl font-bold mb-4">Skills Assessment</h2>
+            <span class="badge px-3 py-1 rounded-full text-xs">Python</span>
+            <span class="badge px-3 py-1 rounded-full text-xs">Linux</span>
+        </section>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <section class="glass-card p-8 col-span-3">
+            <h2 class="text-xl font-bold mb-4">Career Development Plan</h2>
+            <p class="text-sm text-blue-100/70">Junior → Senior → Architect</p>
+        </section>
 
-            <!-- Cert 1 -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <h3 class="text-lg font-bold mb-2">HTML Essentials</h3>
-                <p class="text-sm text-blue-100/70 mb-4">
-                    Learned HTML structure and web design basics.
-                </p>
+        <section class="glass-card p-8 col-span-1">
+            <h2 class="text-xl font-bold mb-4">Evidence</h2>
+            <p class="text-sm">Projects & Courses</p>
+        </section>
 
-                <a href="HTML_Essentials_certificate.pdf"
-                   target="_blank"
-                   class="px-4 py-2 text-sm bg-white/10 rounded-lg inline-block hover:bg-white/20">
-                    View Certificate
-                </a>
-            </div>
+        <section class="glass-card p-10 col-span-4">
+            <h2 class="text-2xl font-bold mb-6">Personal Reflection</h2>
+            <p class="text-sm text-blue-100/70">
+                Reflection content here...
+            </p>
+        </section>
 
-            <!-- Cert 2 -->
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-                <h3 class="text-lg font-bold mb-2">Python Essentials 1</h3>
-                <p class="text-sm text-blue-100/70 mb-4">
-                    Learned Python basics and problem solving.
-                </p>
+    </main>
 
-                <a href="Python_Essentials_1_certificate.pdf"
-                   target="_blank"
-                   class="px-4 py-2 text-sm bg-white/10 rounded-lg inline-block hover:bg-white/20">
-                    View Certificate
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ROADMAP -->
-    <section class="glass-card p-8 col-span-4">
-        <h2 class="text-xl font-bold mb-4">Career Plan</h2>
-        <p class="text-sm text-blue-100/70">Junior → Security Architect path</p>
-    </section>
-
-</main>
-
-<footer class="text-center mt-10 text-blue-200/50 text-sm">
-    CSA30203 Portfolio
-</footer>
+    <footer class="text-center py-10 border-t border-white/10">
+        <p class="text-blue-200/40 text-sm">
+            CSA30203 Portfolio
+        </p>
+    </footer>
 
 </body>
 </html>
-```
