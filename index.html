@@ -139,31 +139,33 @@
       position: relative;
     }
 
-    .hero-badge {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(139,92,246,0.4);
-      background: rgba(255,255,255,0.05);
-      margin-bottom: 24px;
-      font-size: 14px;
-      color: #d8b4fe;
-    }
+	.hero-badge {
+	  display: inline-block;
+	  padding: 8px 16px; /* Reduced from 10px 18px */
+	  border-radius: 999px;
+	  border: 1px solid rgba(139,92,246,0.4);
+	  background: rgba(255,255,255,0.05);
+	  margin-bottom: 20px;
+	  font-size: 13px; /* Reduced from 14px */
+	  color: #d8b4fe;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	}
 
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 6rem);
-      font-weight: 900;
-      line-height: 1;
-      margin-bottom: 24px;
-    }
+	.hero h1 {
+	  font-size: clamp(2rem, 5vw, 3.8rem);
+	  font-weight: 900;
+	  line-height: 1.1;
+	  margin-bottom: 18px;
+	}
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: var(--text);
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+	.hero p {
+	  max-width: 850px;
+	  margin: auto;
+	  color: var(--text);
+	  font-size: 0.98rem;
+	  line-height: 1.7;
+	}
 
     .stats-grid {
       margin-top: 70px;
@@ -171,6 +173,92 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
+	.profile-wrapper {
+	  margin-top: 60px;
+	  padding: 36px;
+	  display: grid;
+	  grid-template-columns: 280px 1fr;
+	  gap: 40px;
+	  align-items: center;
+	}
+
+	.profile-image-section {
+	  display: flex;
+	  justify-content: center;
+	}
+
+	.profile-ring {
+	  width: 220px;
+	  height: 220px;
+	  border-radius: 50%;
+	  padding: 6px;
+	  background: linear-gradient(
+		135deg,
+		var(--violet),
+		var(--blue),
+		var(--pink)
+	  );
+	  box-shadow:
+		0 0 30px rgba(139,92,246,0.35),
+		0 0 60px rgba(96,165,250,0.15);
+	}
+
+	.profile-ring img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  border-radius: 50%;
+	  display: block;
+	  border: 4px solid rgba(10,14,39,0.95);
+	}
+
+	.profile-content h2 {
+	  font-size: 2rem;
+	  margin-bottom: 16px;
+	}
+
+	.profile-content p {
+	  color: var(--text);
+	  line-height: 1.8;
+	  margin-bottom: 26px;
+	  max-width: 700px;
+	}
+
+	.profile-tag {
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 10px;
+	  padding: 10px 16px;
+	  border-radius: 999px;
+	  background: rgba(139,92,246,0.12);
+	  border: 1px solid rgba(139,92,246,0.25);
+	  color: #d8b4fe;
+	  margin-bottom: 18px;
+	  font-size: 14px;
+	}
+
+	.profile-info {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 14px;
+	}
+
+	.info-card {
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	  padding: 12px 18px;
+	  border-radius: 16px;
+	  background: rgba(255,255,255,0.04);
+	  border: 1px solid rgba(255,255,255,0.08);
+	  color: white;
+	  font-size: 14px;
+	}
+
+	.info-card i {
+	  color: var(--violet);
+	}	
 
     .stat-card {
       padding: 30px;
@@ -196,11 +284,11 @@
       margin-bottom: 60px;
     }
 
-    .section-title h2 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
+	.section-title h2 {
+	  font-size: clamp(1.6rem, 3vw, 2.3rem);
+	  margin-bottom: 10px;
+	  font-weight: 800;
+	}
 
     .line {
       width: 100px;
@@ -234,10 +322,10 @@
       font-size: 1.7rem;
     }
 
-    .career-content h3 {
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
+	.career-content h3 {
+	  font-size: 1.5rem;
+	  margin-bottom: 6px;
+	}
 
     .career-content span {
       color: #c4b5fd;
@@ -276,10 +364,10 @@
       grid-column: span 2;
     }
 
-    .skill-card h3 {
-      margin-bottom: 26px;
-      font-size: 1.7rem;
-    }
+	.skill-card h3 {
+	  margin-bottom: 22px;
+	  font-size: 1.35rem;
+	}
 
     .progress-item {
       margin-bottom: 24px;
@@ -320,67 +408,90 @@
       font-size: 14px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 28px;
-    }
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 40px;
+  padding-left: 55px;
+}
 
-    .timeline-card {
-      padding: 36px;
-      position: relative;
-      overflow: hidden;
-    }
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    var(--violet),
+    var(--blue)
+  );
+  opacity: 0.8;
+}
 
-    .timeline-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--violet), var(--blue));
-    }
+.timeline-card {
+  padding: 36px;
+  position: relative;
+  overflow: visible;
+}
 
-    .timeline-period {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(139,92,246,0.15);
-      border: 1px solid rgba(139,92,246,0.25);
-      color: #d8b4fe;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  left: -45px;
+  top: 45px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--violet), var(--blue));
 
-    .timeline-card h3 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+  box-shadow:
+    0 0 0 4px rgba(139,92,246,0.15),
+    0 0 18px rgba(139,92,246,0.45);
+}
 
-    .timeline-role {
-      color: var(--violet);
-      margin-bottom: 24px;
-      font-size: 1.1rem;
-    }
+.timeline-period {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(139,92,246,0.15);
+  border: 1px solid rgba(139,92,246,0.25);
+  color: #d8b4fe;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
 
-    .timeline-card ul {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
+.timeline-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
 
-    .timeline-card li {
-      list-style: none;
-      color: var(--text);
-      line-height: 1.7;
-      display: flex;
-      gap: 12px;
-    }
+.timeline-role {
+  color: var(--violet);
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
 
-    .timeline-card li i {
-      color: var(--violet);
-      margin-top: 4px;
-    }
+.timeline-card ul {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.timeline-card li {
+  list-style: none;
+  color: var(--text);
+  line-height: 1.7;
+  display: flex;
+  gap: 12px;
+}
+
+.timeline-card li i {
+  color: var(--violet);
+  margin-top: 4px;
+}
 
     .projects-grid {
       display: grid;
@@ -392,10 +503,10 @@
       padding: 28px;
     }
 
-    .project-card h3 {
-      margin-bottom: 14px;
-      font-size: 1.4rem;
-    }
+	.project-card h3 {
+	  margin-bottom: 12px;
+	  font-size: 1.2rem;
+	}
 
     .project-card p {
       color: var(--text);
@@ -415,11 +526,11 @@
       margin-bottom: 24px;
     }
 
-    .reflection-item h3 {
-      color: #d8b4fe;
-      margin-bottom: 16px;
-      font-size: 1.4rem;
-    }
+	.reflection-item h3 {
+	  color: #d8b4fe;
+	  margin-bottom: 14px;
+	  font-size: 1.2rem;
+	}
 
     .reflection-item p {
       color: var(--text);
@@ -431,10 +542,10 @@
       padding: 60px 40px;
     }
 
-    .cta h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: 24px;
-    }
+	.cta h2 {
+	  font-size: clamp(1.8rem, 4vw, 3rem);
+	  margin-bottom: 20px;
+	}
 
     .cta p {
       color: var(--text);
@@ -479,6 +590,71 @@
       transform: translateY(-4px) scale(1.02);
     }
 
+        .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 14, 39, 0.65);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+	.nav-container {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  min-height: 75px;
+	  position: relative;
+	}
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--violet), var(--blue));
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+	  position: absolute;
+      right: 0;
+    }
+
     footer {
       padding: 50px 0;
       text-align: center;
@@ -499,6 +675,27 @@
     }
 
     @media (max-width: 768px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(10, 14, 39, 0.95);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 24px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
       section {
         padding: 70px 0;
       }
@@ -527,10 +724,96 @@
       .cta {
         padding: 40px 24px;
       }
+		.profile-wrapper {
+		  grid-template-columns: 1fr;
+		  text-align: center;
+		  padding: 28px;
+		}
+
+		.profile-content p {
+		  margin-inline: auto;
+		}
+
+		.profile-info {
+		  justify-content: center;
+		}
+
+		.profile-ring {
+		  width: 190px;
+		  height: 190px;
+		}	  
     }
+	.cert-btn {
+	  margin-top: 18px;
+	  padding: 12px 18px;
+	  border-radius: 14px;
+	  border: 1px solid rgba(139,92,246,0.3);
+	  background: rgba(139,92,246,0.12);
+	  color: #d8b4fe;
+	  font-size: 14px;
+	  font-weight: 600;
+	  cursor: pointer;
+	  display: inline-flex;
+	  align-items: center;
+	  gap: 10px;
+	  transition: 0.3s ease;
+	}
+
+	.cert-btn:hover {
+	  transform: translateY(-3px);
+	  background: rgba(139,92,246,0.2);
+	  box-shadow: 0 0 18px rgba(139,92,246,0.25);
+	}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(139,92,246,0.3);
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}	
+	
   </style>
 </head>
 <body>
+
+	<nav class="navbar">
+	  <div class="container nav-container">
+
+		<div class="nav-links" id="navLinks">
+		  <a href="#career">Career</a>
+		  <a href="#skills">Skills</a>
+		  <a href="#roadmap">Roadmap</a>
+		  <a href="#projects">Projects</a>
+		  <a href="#reflection">Reflection</a>
+		</div>
+
+		<button class="menu-btn" id="menuBtn">
+		  <i class="fa-solid fa-bars"></i>
+		</button>
+
+	  </div>
+	</nav>
 
   <div class="bg-blur">
     <div class="blur-circle blur1"></div>
@@ -540,8 +823,8 @@
 
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">
-        Software Developer (Security-Focused)
+      <div>
+	  <h1>
       </div>
 
       <h1 class="gradient-text">
@@ -553,31 +836,38 @@
         Passionate about cybersecurity, secure coding practices, cloud security, and modern application development.
       </p>
 
-      <div class="stats-grid">
+	<div class="profile-wrapper glass">
 
-        <div class="glass stat-card">
-          <i class="fa-solid fa-shield-halved"></i>
-          <h3>100%</h3>
-          <p>Security Focus</p>
-        </div>
+	  <div class="profile-image-section">
+		<div class="profile-ring">
+		  <img src="your-image.jpg" alt="Profile Picture">
+		</div>
+	  </div>
 
-        <div class="glass stat-card">
-          <i class="fa-solid fa-code"></i>
-          <h3>High</h3>
-          <p>Code Quality</p>
-        </div>
+	  <div class="profile-content">
 
-        <div class="glass stat-card">
-          <i class="fa-solid fa-bullseye"></i>
-          <h3>2026</h3>
-          <p>Career Ready</p>
-        </div>
+		<div class="profile-tag">
+		  <i class="fa-solid fa-user-secret"></i>
+		  Security-Focused Developer
+		</div>
 
-      </div>
+		<h2>
+		  About Me
+		</h2>
+
+		<p>
+		  Passionate software developer focused on building secure, scalable,
+		  and modern applications. I enjoy combining development with cybersecurity
+		  principles to create systems that are efficient, protected, and user-friendly.
+		</p>
+
+	  </div>
+
+	</div>
     </div>
   </section>
 
-  <section>
+  <section id="career">
     <div class="container">
 
       <div class="section-title">
@@ -630,7 +920,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <div class="container">
 
       <div class="section-title">
@@ -717,7 +1007,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="roadmap">
     <div class="container">
 
       <div class="section-title">
@@ -772,7 +1062,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="projects">
     <div class="container">
 
       <div class="section-title">
@@ -794,6 +1084,10 @@
             <div class="badge">Flask</div>
             <div class="badge">Security</div>
           </div>
+		<button class="cert-btn" onclick="openCert('cert1.jpg')">
+		  <i class="fa-solid fa-certificate"></i>
+		  View Certificate
+		</button>
         </div>
 
         <div class="glass project-card">
@@ -808,6 +1102,10 @@
             <div class="badge">Security Testing</div>
             <div class="badge">Python</div>
           </div>
+		<button class="cert-btn" onclick="openCert('cert1.jpg')">
+		  <i class="fa-solid fa-certificate"></i>
+		  View Certificate
+		</button>		  
         </div>
 
         <div class="glass project-card">
@@ -821,6 +1119,10 @@
             <div class="badge">JavaScript</div>
             <div class="badge">Cybersecurity</div>
           </div>
+		<button class="cert-btn" onclick="openCert('cert1.jpg')">
+		  <i class="fa-solid fa-certificate"></i>
+		  View Certificate
+		</button>		  
         </div>
 
         <div class="glass project-card">
@@ -834,6 +1136,10 @@
             <div class="badge">Networking</div>
             <div class="badge">Python</div>
           </div>
+		<button class="cert-btn" onclick="openCert('cert1.jpg')">
+		  <i class="fa-solid fa-certificate"></i>
+		  View Certificate
+		</button>		  
         </div>
 
       </div>
@@ -841,7 +1147,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="reflection">
     <div class="container">
 
       <div class="section-title">
@@ -915,6 +1221,45 @@
     </div>
   </footer>
 
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+	
+function openCert(imageSrc) {
+  const modal = document.getElementById("certModal");
+  const img = document.getElementById("certImg");
+
+  modal.style.display = "block";
+  img.src = imageSrc;
+}
+
+function closeCert() {
+  document.getElementById("certModal").style.display = "none";
+}
+
+// close when clicking outside image
+window.onclick = function(event) {
+  const modal = document.getElementById("certModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}	
+  </script>
+  
+<div id="certModal" class="modal">
+  <span class="close" onclick="closeCert()">&times;</span>
+  <img class="modal-content" id="certImg">
+</div> 
+
 </body>
 </html>
-
