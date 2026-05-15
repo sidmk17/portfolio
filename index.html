@@ -1,14 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Security Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
+        :root {
+            --electric-violet: #8F00FF;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: radial-gradient(at top left, #0f172a, #020617, #1e1b4b);
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--electric-violet);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(143, 0, 255, 0.2);
+        }
+
+        .accent-text { color: var(--electric-violet); }
+        .accent-bg { background-color: var(--electric-violet); }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
-<body>
-    <h1>Welcome to My Website!</h1>
-    <p>I am building this on GitHub Pages.</p>
+<body class="p-4 md:p-10">
+
+    <header class="max-w-7xl mx-auto mb-16 text-center">
+        <h1 class="text-5xl font-extrabold mb-4 tracking-tight">
+            <span class="text-white">Career</span> <span class="accent-text">Portfolio</span>
+        </h1>
+        <p class="text-gray-400 text-lg">CSA30203: Special Topics in Computer Network Security</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto bento-grid">
+        
+        <section class="glass-card p-8 col-span-2 row-span-1">
+            <div class="flex items-center gap-4 mb-4">
+                <i class="fas fa-shield-halved accent-text text-2xl"></i>
+                <h2 class="text-2xl font-bold italic">Software Developer (Security-Focused)</h2>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                As a security-focused developer, I bridge the gap between building software and protecting it[cite: 14]. My core responsibility involves 
+                integrating security at every stage of the SDLC (Software Development Life Cycle)[cite: 14]. 
+            </p>
+            <ul class="text-sm space-y-2 text-gray-400">
+                <li><i class="fas fa-check accent-text mr-2"></i><strong>Responsibilities:</strong> Secure coding, vulnerability patching, and encryption implementation[cite: 14].</li>
+                <li><i class="fas fa-check accent-text mr-2"></i><strong>Relevance:</strong> Critical in preventing data breaches in modern cloud infrastructures[cite: 14].</li>
+            </ul>
+        </section>
+
+        <section class="glass-card p-8 col-span-2">
+            <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <i class="fas fa-chart-line accent-text"></i> Skills Assessment
+            </h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-2">Technical</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">Python</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">Networking Basics</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">Linux</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-2">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">Teamwork</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-400 italic">
+                <strong>Industry Gap:</strong> While strong in basic coding, I am currently working on mastering DevSecOps tools like Docker Security and CI/CD pipelines to meet senior developer requirements[cite: 29, 30].
+            </p>
+        </section>
+
+        <section class="glass-card p-8 col-span-3">
+            <h2 class="text-xl font-bold mb-6">Career Development Plan</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <h3 class="accent-text font-bold mb-2">Short-Term (2 Years)</h3>
+                    <p class="text-xs text-gray-400">Junior Security Developer focusing on obtaining CompTIA Security+ and CCNA[cite: 32, 34].</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <h3 class="accent-text font-bold mb-2">Long-Term (5 Years)</h3>
+                    <p class="text-xs text-gray-400">Security Architect specializing in AWS Cloud Security and high-performance encryption[cite: 34].</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <h3 class="accent-text font-bold mb-2">Target Tools</h3>
+                    <p class="text-xs text-gray-400">Wireshark, Linux Shell Scripting, and Burp Suite[cite: 33].</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card p-8 col-span-1">
+            <h2 class="text-xl font-bold mb-4">Evidence</h2>
+            <div class="space-y-4">
+                <div class="group cursor-pointer">
+                    <p class="text-xs text-gray-500 uppercase">Project</p>
+                    <p class="text-sm font-semibold group-hover:text-purple-400 transition">Python Port Scanner</p>
+                </div>
+                <hr class="border-white/5">
+                <div class="group cursor-pointer">
+                    <p class="text-xs text-gray-500 uppercase">Course</p>
+                    <p class="text-sm font-semibold group-hover:text-purple-400 transition">Cisco Networking Academy</p>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-4 italic">Add links to your actual GitHub repos or certificates here[cite: 35].</p>
+            </div>
+        </section>
+
+        <section class="glass-card p-8 col-span-4 mb-10">
+            <h2 class="text-2xl font-bold mb-6 accent-text">Personal Reflection: [Your Choice of Company]</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Why this company? [cite: 41]</h3>
+                    <p class="text-gray-400 text-sm mb-4">
+                        (Example: I want to work for Google because of their leadership in zero-trust security architecture. My value lies in my ability to write code that is secure by design.) [cite: 41]
+                    </p>
+                    <h3 class="font-bold text-lg mb-2">Strengths & Weaknesses [cite: 42]</h3>
+                    <p class="text-gray-400 text-sm">
+                        (Example: My strength is analytical problem-solving; my weakness is focusing too much on details, which I manage through better time-blocking.) [cite: 42]
+                    </p>
+                </div>
+                <div class="flex flex-col justify-center items-center bg-white/5 rounded-2xl border border-dashed border-white/20 p-6">
+                    <h3 class="text-xl font-bold mb-2 uppercase tracking-tighter">Why Hire Me? [cite: 43]</h3>
+                    <p class="text-center text-gray-400 text-sm">
+                        "I combine a foundation in Computer Science with a specialized focus on network security. My portfolio demonstrates a commitment to continuous learning through real-world evidence and a clear 5-year growth trajectory." [cite: 43]
+                    </p>
+                    <button class="mt-6 px-8 py-3 accent-bg text-white font-bold rounded-lg hover:scale-105 transition-transform">
+                        Let's Secure the Future
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-10 border-t border-white/10 max-w-7xl mx-auto">
+        <p class="text-gray-500 text-sm">Created for CSA30203 - Academic Submission [cite: 1, 57]</p>
+    </footer>
+
 </body>
 </html>
