@@ -792,15 +792,15 @@
   color: white;
   cursor: pointer;
 }	
-
+	  
 /* ==========================================================================
    STYLE FOR REFLECTION (Pill Tag and Glass Container Layout)
    ========================================================================== */
 
 .reflection-container {
   width: 100%;
-  max-width: 100%; /* Adapts flawlessly within your wrapper constraints */
-  margin-top: 20px;
+  margin: 0; /* Let the container wrapper handle the alignment centering */
+  padding-top: 20px;
 }
 
 /* Row wrapper for the pill tags */
@@ -809,6 +809,7 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 25px;
+  padding-left: 5px; /* Tiny adjustment to perfectly align tabs with the card edge */
 }
 
 /* Custom button state designed to match your Soft Skills tags */
@@ -819,7 +820,7 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 14px;
-  border-radius: 999px; /* Replicates Soft Skills pill look */
+  border-radius: 999px; 
   font-family: inherit;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -834,7 +835,7 @@
 /* Active Pill Style matches your layout highlight */
 .reflection-tags .tab-btn.active {
   background: rgba(139, 92, 246, 0.22);
-  color: #d8b4fe; /* Matches your portfolio's lavender accent font */
+  color: #d8b4fe; 
   border-color: var(--violet);
   font-weight: 600;
   box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
@@ -843,7 +844,7 @@
 /* Custom pad alignment inside your pre-defined glass container */
 .reflection-card-body {
   padding: 40px;
-  min-height: 260px;
+  min-height: 240px; /* Slight scale decrease for tighter spacing */
 }
 
 /* Prevent text shifting on card hover transform */
@@ -889,7 +890,7 @@
     padding: 24px;
   }
   .reflection-tags .tab-btn {
-    width: 100%; /* Fluid full-width vertical layout on mobile devices */
+    width: 100%; 
     text-align: center;
   }
 }
@@ -1249,6 +1250,7 @@
   </section>
 
   <section id="reflection">
+<div class="container">
 <div class="reflection-container">
   
   <div class="reflection-tags">
@@ -1297,6 +1299,7 @@
     </div>
 
   </div>
+</div>
 </div>
   </section>
 
