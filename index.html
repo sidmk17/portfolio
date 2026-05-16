@@ -792,7 +792,89 @@
   color: white;
   cursor: pointer;
 }	
-	
+/*STYLE FOR REFLECTION*/
+/* Container layout */
+.reflection-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Tabs container row */
+.folder-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: -1px; /* Blends button border with the box below */
+  position: relative;
+  z-index: 2;
+}
+
+/* Base styling for each tab button */
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #a0a5b5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover and Active state color matching your screenshots */
+.tab-btn:hover {
+  background: rgba(147, 51, 234, 0.2); /* Soft purple tint */
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: #1e2230; /* Matches your background card color */
+  color: #c084fc; /* Bright neon purple accent */
+  border-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Content Container matching your card glassmorphism box */
+.folder-body {
+  background: #1e2230; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border-top-left-radius: 0px; /* Gives the folder tab feel */
+  padding: 30px;
+  min-height: 250px;
+}
+
+/* Hide content modules by default */
+.tab-content {
+  display: none;
+}
+
+/* Display active module text smoothly */
+.tab-content.active-content {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content p {
+  text-align: justify;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.tab-content h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+	  
   </style>
 </head>
 <body>
@@ -1148,76 +1230,55 @@
   </section>
 
   <section id="reflection">
-    <div class="container">
+<div class="container">
+  
+  <div class="folder-tabs">
+    <button class="tab-btn active" onclick="openTab(event, 'motivation')">Motivation</button>
+    <button class="tab-btn" onclick="openTab(event, 'value')">Value Offered</button>
+    <button class="tab-btn" onclick="openTab(event, 'suitability')">Suitability</button>
+    <button class="tab-btn" onclick="openTab(event, 'skills')">My Skills</button>
+    <button class="tab-btn" onclick="openTab(event, 'strengths')">Strengths & Weaknesses</button>
+    <button class="tab-btn" onclick="openTab(event, 'hiring')">Why Hire Me</button>
+  </div>
 
-      <div class="section-title">
-        <h2 class="gradient-text">Personal Reflection</h2>
-        <div class="line"></div>
-      </div>
-
-      <div class="glass reflection-card">
-
-        <div class="reflection-item">
-          <h3>My Motivation for Joining Dell Technologies</h3>
-          <p style="text-align: justify;">
-            I want to work for this company because it is a global leader in scalable enterprise software and infrastructure security.
-			As a developer who believes software engineering and cybersecurity must go hand-in-hand, I see Dell as the ultimate environment to build modern applications within an internationally integrated ecosystem. 
-			Dell’s commitment to secure-by-design development perfectly matches my vision to create software that is highly efficient, deeply protected, and user-friendly.
-          </p>
-        </div>
-
-        <div class="reflection-item">
-          <h3>The Value I Can Bring to the Company</h3>
-          <p style="text-align: justify;">
-            I bring the mindset of a developer who prioritizes application security from the very first line of code. 
-			Backed by a strong foundation in Internet Computing, I understand how server-side logic, real-time databases, and cloud networks communicate securely.
-			This allows me to seamlessly integrate into Dell’s engineering teams, helping build robust applications that protect user data while optimizing the overall user experience.
-        </div>
-
-        <div class="reflection-item">
-          <h3>Why the Company Should Hire Me</h3>
-          <p style="text-align: justify;">
-            You should hire me because I am a highly motivated, first-class graduate who goes beyond generic programming to blend software engineering with practical cybersecurity principles.
-			I possess a strong technical baseline, a security-conscious approach to writing code, and a highly adaptive attitude toward mastering complex, enterprise-grade development platforms.
-          </p>
-        </div>
-		  
-		<div class="reflection-item">
-          <h3>The Skills That Make Me Suitable for the Job</h3>
-          <p style="text-align: justify;">
-            Secure Application Development: Designing clean software logic and structuring code while adhering to robust data privacy and threat mitigation standards.
-
-			Modern Tech Stack Integration: Practical experience configuring backend infrastructure, APIs, and real-time cloud databases (such as Firebase Realtime Database) to stream data safely.
-
-			Algorithmic Efficiency: Utilizing optimization and search algorithms to write scalable, high-performance code capable of processing backend system data efficiently.
-
-			Network & Security Compliance: Aligning development practices with corporate network security policies, access controls, and data protection strategies.
-          </p>
-        </div>
-
-		<div class="reflection-item">
-          <h3>My Strengths and Weaknesses</h3>
-          <p style="text-align: justify;">
-			My Strengths: My primary strength is my security-first analytical logic; I naturally view software through a defensive lens to capture logical bottlenecks or security gaps before deployment. 
-			I also bring strong end-to-end adaptability, with a proven track record of managing small-scale projects from backend schemas to user interfaces.
-
-			My Weaknesses: My main weakness is my tendency to over-engineer; I sometimes spend excessive time refactoring code for absolute perfection early in a project.
-			I manage this by using agile frameworks, focusing on deploying a secure Minimum Viable Product (MVP) first, and then iteratively refining it based on live testing.
-          </p>
-        </div>
-
-		<div class="reflection-item">
-          <h3>Why a Company Would Choose to Hire Me</h3>
-          <p style="text-align: justify;">
-			A company would choose to hire me because I offer a unique combination of a first-class technical education, practical application development experience, and a security-conscious mindset. 
-			Instead of just focusing on building code that works, I focus on building code that lasts and protects user data. 
-			My adaptability and specialized interest in network security make me a valuable asset to any modern development team.
-          </p>
-        </div>
-		  
-      </div>
-
+  <div class="folder-body">
+    
+    <div id="motivation" class="tab-content active-content">
+      <h3>My Motivation for Joining the Company</h3>
+      <p>I want to work for Dell Technologies because it is a global leader in scalable enterprise software and infrastructure security. As a developer who believes software engineering and cybersecurity must go hand-in-hand, I see Dell as the ultimate environment to build modern applications within an internationally integrated ecosystem. Dell’s commitment to secure-by-design development perfectly matches my vision to create software that is highly efficient, deeply protected, and user-friendly.</p>
     </div>
+
+    <div id="value" class="tab-content">
+      <h3>The Value I Can Bring to the Company</h3>
+      <p>I bring the mindset of a developer who prioritizes application security from the very first line of code. Backed by a strong foundation in Internet Computing, I understand how server-side logic, real-time databases, and cloud networks communicate securely. This allows me to seamlessly integrate into Dell’s engineering teams, helping build robust applications that protect user data while optimizing the overall user experience.</p>
+    </div>
+
+    <div id="suitability" class="tab-content">
+      <h3>Why the Company Should Hire Me</h3>
+      <p>You should hire me because I am a highly motivated, first-class graduate who goes beyond generic programming to blend software engineering with practical cybersecurity principles. I possess a strong technical baseline, a security-conscious approach to writing code, and a highly adaptive attitude toward mastering complex, enterprise-grade development platforms.</p>
+    </div>
+
+    <div id="skills" class="tab-content">
+      <h3>The Skills That Make Me Suitable for the Job</h3>
+      <p><strong>• Secure Application Development:</strong> Designing clean software logic and structuring code while adhering to robust data privacy and threat mitigation standards.</p>
+      <p><strong>• Modern Tech Stack Integration:</strong> Practical experience configuring backend infrastructure, APIs, and real-time cloud databases (such as Firebase Realtime Database) to stream data safely.</p>
+      <p><strong>• Algorithmic Efficiency:</strong> Utilizing optimization and search algorithms to write scalable, high-performance code capable of processing backend system data efficiently.</p>
+      <p><strong>• Network & Security Compliance:</strong> Aligning development practices with corporate network security policies, access controls, and data protection strategies.</p>
+    </div>
+
+    <div id="strengths" class="tab-content">
+      <h3>My Strengths and Weaknesses</h3>
+      <p><strong>My Strengths:</strong> My primary strength is my security-first analytical logic; I naturally view software through a defensive lens to capture logical bottlenecks or security gaps before deployment. I also bring strong end-to-end adaptability, with a proven track record of managing small-scale projects from backend schemas to user interfaces.</p>
+      <p><strong>My Weaknesses:</strong> My main weakness is my tendency to over-engineer; I sometimes spend excessive time refactoring code for absolute perfection early in a project. I manage this by using agile frameworks, focusing on deploying a secure Minimum Viable Product (MVP) first, and then iteratively refining it based on live testing.</p>
+    </div>
+
+    <div id="hiring" class="tab-content">
+      <h3>Why a Company Would Choose to Hire Me</h3>
+      <p>A company would choose to hire me because I offer a unique combination of a first-class technical education, practical application development experience, and a security-conscious mindset. Instead of just focusing on building code that works, I focus on building code that lasts and protects user data. My adaptability and specialized interest in network security make me a valuable asset to any modern development team.</p>
+    </div>
+
+  </div>
+</div>
   </section>
 
   <section>
@@ -1286,7 +1347,26 @@ window.onclick = function(event) {
   if (event.target === modal) {
     modal.style.display = "none";
   }
-}	
+}
+/*SCRIPT FOR REFLECTION PART*/
+function openTab(evt, tabId) {
+  // Hide all text content blocks
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active-content");
+  }
+
+  // Remove the active color states from all buttons
+  tablinks = document.getElementsByClassName("tab-btn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+
+  // Show the specific tab clicked and add active style to the button
+  document.getElementById(tabId).classList.add("active-content");
+  evt.currentTarget.classList.add("active");
+}
   </script>
   
 <div id="certModal" class="modal">
