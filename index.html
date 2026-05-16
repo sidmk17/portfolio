@@ -894,6 +894,114 @@
     text-align: center;
   }
 }
+
+/* Skills Assessment Structural Elements */
+/* Stack layout sequentially instead of forcing side-by-side columns */
+.skills-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Custom Badge System Grid */
+.custom-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Brightened Custom Badges with Light Glowing Accents */
+.custom-skill-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #f8fafc; /* Bright crisp text */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.custom-skill-badge:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Light up the font-awesome icons with distinct vivid tones */
+.custom-skill-badge i {
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+}
+
+.comparison-box-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.comparison-mini-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 22px;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .comparison-box-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Responsive 4-Column Row Layout for Technical Groups */
+.tech-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns side-by-side */
+  gap: 24px;
+}
+
+/* Adjust layout on medium/small tablets and mobile screens */
+@media (max-width: 1200px) {
+  .tech-capabilities-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-capabilities-grid {
+    grid-template-columns: 1fr; /* 1 vertical row stack layout on mobile devices */
+  }
+}
+
+/* Custom Badge Layout to wrap tightly inside narrower columns */
+.custom-badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Glowing Custom Badges styling */
+.custom-skill-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.custom-skill-badge i {
+  font-size: 1rem;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+}	  
+	  
 	  
   </style>
 </head>
@@ -1022,92 +1130,126 @@
     </div>
   </section>
 
-  <section id="skills">
-    <div class="container">
+	<section id="skills">
+	  <div class="container">
 
-      <div class="section-title">
-        <h2 class="gradient-text">Personal Skills Assessment</h2>
-        <div class="line"></div>
-      </div>
+		<div class="section-title">
+		  <h2 class="gradient-text">Personal Skills Assessment</h2>
+		  <div class="line"></div>
+		</div>
 
-      <div class="skills-grid">
+		<div class="skills-vertical-stack">
+		  
+			<div class="glass" style="padding: 35px;">
+			  <h3 style="font-size: 1.35rem; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+				<i class="fa-solid fa-code-branch" style="color: var(--violet);"></i> Technical & Security Capabilities
+			  </h3>
+			  
+			  <div class="tech-capabilities-grid">
+				
+				<div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+				  <span style="font-size: 0.8rem; font-weight: 600; color: #a78bfa; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 6px;">Languages</span>
+				  <div class="custom-badge-grid">
+					<div class="custom-skill-badge"><i class="fa-brands fa-php" style="color: #777bb4;"></i> PHP</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-python" style="color: #64b5f6;"></i> Python</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-java" style="color: #ffb74d;"></i> Java</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-js" style="color: #ffd54f;"></i> JavaScript</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-html5" style="color: #ff8a65;"></i> HTML</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-css3-alt" style="color: #4fc3f7;"></i> CSS</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-database" style="color: #81c784;"></i> SQL</div>
+				  </div>
+				</div>
 
-        <div class="glass skill-card large">
-          <h3>Technical Skills</h3>
+				<div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+				  <span style="font-size: 0.8rem; font-weight: 600; color: #60a5fa; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 6px;">Tools & Frameworks</span>
+				  <div class="custom-badge-grid">
+					<div class="custom-skill-badge"><i class="fa-brands fa-laravel" style="color: #ff2d20;"></i> Laravel</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-fire" style="color: #dd4814;"></i> CodeIgniter</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-mobile-screen" style="color: #3880FF;"></i> Ionic Framework</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-git-alt" style="color: #ff8a65;"></i> Git</div>
+					<div class="custom-skill-badge"><i class="fa-brands fa-github" style="color: #ffffff;"></i> GitHub</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-wind" style="color: #26c6da;"></i> Tailwind CSS</div>
+				  </div>
+				</div>
 
-          <div class="progress-item">
-            <div class="progress-top">
-              <span>Secure Coding</span>
-              <span>85%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:85%"></div>
-            </div>
-          </div>
+				<div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+				  <span style="font-size: 0.8rem; font-weight: 600; color: #f472b6; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 6px;">Network Security</span>
+				  <div class="custom-badge-grid">
+					<div class="custom-skill-badge"><i class="fa-solid fa-magnifying-glass-chart" style="color: #4fc3f7;"></i> Wireshark Packet Analysis</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-chart-line" style="color: #ffb74d;"></i> Traffic Trend Monitoring</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-network-wired" style="color: #ba68c8;"></i> Protocols (TCP/IP, HTTP/S)</div>
+				  </div>
+				</div>
 
-          <div class="progress-item">
-            <div class="progress-top">
-              <span>Web Security</span>
-              <span>75%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:75%"></div>
-            </div>
-          </div>
+				<div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+				  <span style="font-size: 0.8rem; font-weight: 600; color: #22d3ee; text-transform: uppercase; tracking-wider; display: block; margin-bottom: 6px;">Application Defense</span>
+				  <div class="custom-badge-grid">
+					<div class="custom-skill-badge"><i class="fa-solid fa-shield-halved" style="color: #ff8a65;"></i> @csrf Protection</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-fingerprint" style="color: #ffd54f;"></i> bcrypt Password Hashing</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-key" style="color: #22d3ee;"></i> JWT Authentication</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-lock" style="color: #81c784;"></i> Encryption Algorithms</div>
+					<div class="custom-skill-badge"><i class="fa-solid fa-bug-slash" style="color: #f28b82;"></i> OWASP Top 10 Mitigation</div>
+				  </div>
+				</div>
 
-          <div class="progress-item">
-            <div class="progress-top">
-              <span>Linux Administration</span>
-              <span>80%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:80%"></div>
-            </div>
-          </div>
+			  </div>
+			</div>
 
-          <div class="progress-item">
-            <div class="progress-top">
-              <span>Cloud Security</span>
-              <span>65%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:65%"></div>
-            </div>
-          </div>
-        </div>
+		  <div class="glass" style="padding: 35px;">
+			<h3 style="font-size: 1.35rem; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+			  <i class="fa-solid fa-brain" style="color: var(--blue);"></i> Soft Skills & Mindset
+			</h3>
+			<p style="color: var(--text); line-height: 1.6; margin-bottom: 24px; font-size: 0.95rem;">
+			  A practical balance of problem-solving methods and communication channels needed to write software code that is both highly functional and structurally reliable.
+			</p>
 
-        <div class="glass skill-card">
-          <h3>Technologies</h3>
+			<div class="badge-grid">
+			  <div class="badge"><i class="fa-solid fa-shield-halved" style="margin-right: 6px; color: #f28b82;"></i> Defensive Mindset</div>
+			  <div class="badge"><i class="fa-solid fa-magnifying-glass" style="margin-right: 6px; color: #4fc3f7;"></i> Analytical Problem-Solving</div>
+			  <div class="badge"><i class="fa-solid fa-users" style="margin-right: 6px; color: #81c784;"></i> Team Collaboration</div>
+			  <div class="badge"><i class="fa-solid fa-comments" style="margin-right: 6px; color: #ffb74d;"></i> Technical Communication</div>
+			  <div class="badge"><i class="fa-solid fa-graduation-cap" style="margin-right: 6px; color: #ba68c8;"></i> Continuous Learning</div>
+			</div>
+		  </div>
 
-          <div class="badge-grid">
-            <div class="badge">Python</div>
-            <div class="badge">Java</div>
-            <div class="badge">JavaScript</div>
-            <div class="badge">Linux</div>
-            <div class="badge">GitHub</div>
-            <div class="badge">OWASP</div>
-            <div class="badge">SQL</div>
-            <div class="badge">Docker</div>
-            <div class="badge">Cloud Security</div>
-          </div>
-        </div>
+		  <div class="glass" style="padding: 35px;">
+			<h3 style="font-size: 1.35rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+			  <i class="fa-solid fa-chart-line" style="color: var(--pink);"></i> Industry Criteria Comparison (Dell Technologies)
+			</h3>
 
-        <div class="glass skill-card">
-          <h3>Soft Skills</h3>
+			<div class="comparison-box-grid" style="margin-bottom: 24px;">
+			  
+			  <div class="comparison-mini-card">
+				<h4 style="color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #a78bfa;">Software Engineering Focus</h4>
+				<p style="color: var(--text); font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px;">
+				  <strong>My Current Status:</strong> Able to develop and structure robust backend logic, manage database interactions using Laravel and CodeIgniter, and design mobile interfaces using Ionic.
+				</p>
+				<p style="color: var(--text); font-size: 0.9rem; line-height: 1.6; opacity: 0.75; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px; margin-top: 8px;">
+				  <strong>Dell Target Expectation:</strong> Creating standard architectural features while actively conducting automated source code security audits throughout the development process.
+				</p>
+			  </div>
 
-          <div class="badge-grid">
-            <div class="badge">Problem Solving</div>
-            <div class="badge">Communication</div>
-            <div class="badge">Teamwork</div>
-            <div class="badge">Adaptability</div>
-            <div class="badge">Critical Thinking</div>
-            <div class="badge">Continuous Learning</div>
-          </div>
-        </div>
+			  <div class="comparison-mini-card">
+				<h4 style="color: #fff; font-size: 1rem; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #60a5fa;">Networking & Environments</h4>
+				<p style="color: var(--text); font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px;">
+				  <strong>My Current Status:</strong> Reviewing network frame behaviors locally using Wireshark tools and implementing foundational, secure authorization logic.
+				</p>
+				<p style="color: var(--text); font-size: 0.9rem; line-height: 1.6; opacity: 0.75; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px; margin-top: 8px;">
+				  <strong>Dell Target Expectation:</strong> Evolving from isolated local area desktop testing networks toward understanding how applications manage authentication and pass data securely across cloud spaces.
+				</p>
+			  </div>
 
-      </div>
-    </div>
-  </section>
+			</div>
+
+			<div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text); opacity: 0.9;">
+			  <i class="fa-solid fa-bullseye" style="color: var(--cyan);"></i> 
+			  <strong>Targeted Improvement Plan:</strong> To bridge these gaps, I plan to integrate simple open-source code vulnerability checkers inside my active GitHub repositories while expanding my skills in ethical hacking and penetration testing to actively identify and secure flaws in my web applications.
+			</div>
+			
+		  </div>
+
+		</div> </div>
+	</section>
 
   <section id="roadmap">
     <div class="container">
