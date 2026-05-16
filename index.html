@@ -1264,60 +1264,109 @@
 		</div> </div>
 	</section>
 
-  <section id="roadmap">
-    <div class="container">
+<section id="roadmap">
+  <div class="container">
 
-      <div class="section-title">
-        <h2 class="gradient-text">Career Development Plan</h2>
-        <div class="line"></div>
+    <div class="section-title">
+      <h2 class="gradient-text">Career Development Plan</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="glass" style="padding: 35px; margin-bottom: 40px;">
+      <h3 style="font-size: 1.35rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-weight: 700;">
+        <i class="fa-solid fa-screwdrivers-wrench" style="color: var(--violet);"></i> Core Tools & Technical Focus
+      </h3>
+      <p style="color: var(--text); line-height: 1.7; margin-bottom: 20px; font-size: 0.95rem;">
+        To transition from traditional backend web application engineering into a security-focused development role, I have identified key industry tools and processes that I must master:
+      </p>
+      
+      <div class="tech-capabilities-grid">
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: #a78bfa; text-transform: uppercase; display: block; margin-bottom: 6px;">Network Traffic Analysis</span>
+          <p style="color: var(--text); font-size: 0.85rem; line-height: 1.5;">
+            Mastering <strong>Wireshark</strong> deep-packet inspection to capture real-time traffic, analyze headers, and detect unauthorized transmission or cross-origin injection vulnerabilities.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: #60a5fa; text-transform: uppercase; display: block; margin-bottom: 6px;">Secure Deployments</span>
+          <p style="color: var(--text); font-size: 0.85rem; line-height: 1.5;">
+            Utilizing secure <strong>Linux (Ubuntu/Kali)</strong> environments for testing server deployments, configuring firewall access control rules, and leveraging <strong>Python</strong> automation.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: #f472b6; text-transform: uppercase; display: block; margin-bottom: 6px;">Defensive Coding</span>
+          <p style="color: var(--text); font-size: 0.85rem; line-height: 1.5;">
+            Implementing advanced defensive mechanisms inside MVC frameworks like <strong>Laravel</strong> (strict session handling, parameterized ORMs) to structurally counter the <strong>OWASP Top 10</strong> vulnerabilities.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 16px; border-radius: 14px;">
+          <span style="font-size: 0.8rem; font-weight: 600; color: #22d3ee; text-transform: uppercase; display: block; margin-bottom: 6px;">Automated Code Auditing</span>
+          <p style="color: var(--text); font-size: 0.85rem; line-height: 1.5;">
+            Integrating Static Application Security Testing (SAST) tools like <strong>Snyk</strong> or <strong>SonarQube</strong> directly within my GitHub version control workflow to intercept hardcoded keys or code vulnerabilities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="glass timeline-card">
+        <div class="timeline-period">Short-Term Strategic Roadmap (1–2 Years)</div>
+        <h3>Academic Graduation & Entry to the Cybersecurity Workforce</h3>
+        <p class="timeline-role">Theme: Building Practical Credentials & Professional Foundation</p>
+        
+        <ul>
+          <li>
+            <i class="fa-solid fa-graduation-cap"></i> 
+            <strong>Complete Degree at UniSZA:</strong> Graduate successfully with a Bachelor of Computer Science (Honors) in Internet Computing, focusing my final year implementation efforts heavily on security-centric system designs.
+          </li>
+          <li>
+            <i class="fa-solid fa-certificate"></i> 
+            <strong>Target Certification — CompTIA Security+:</strong> Dedicate study hours to clear the Security+ examination within 12 months post-graduation, validating an industry-recognized global baseline in core security practices.
+          </li>
+          <li>
+            <i class="fa-solid fa-code-commit"></i> 
+            <strong>Secure Portfolio Enhancement:</strong> Apply rigorous input sanitization, data encryption, and access management features to my development repositories, verifying clean implementations on GitHub.
+          </li>
+          <li>
+            <i class="fa-solid fa-briefcase"></i> 
+            <strong>Career Milestone Goal:</strong> Secure an introductory position as an Associate Application Security Specialist or a Junior Software Engineer with a defensive focus at a premier organization such as <strong>Dell Technologies</strong>.
+          </li>
+        </ul>
       </div>
 
-      <div class="timeline">
-
-        <div class="glass timeline-card">
-          <div class="timeline-period">2026 - 2027</div>
-          <h3>Foundation Stage</h3>
-          <div class="timeline-role">Junior Security Developer</div>
-
-          <ul>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Complete Security+ Certification</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Improve secure coding practices</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Build cybersecurity portfolio projects</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Learn penetration testing fundamentals</li>
-          </ul>
-
-          <div class="badge-grid">
-            <div class="badge">Python</div>
-            <div class="badge">Wireshark</div>
-            <div class="badge">Burp Suite</div>
-            <div class="badge">Git</div>
-          </div>
-        </div>
-
-        <div class="glass timeline-card">
-          <div class="timeline-period">2028 - 2029</div>
-          <h3>Specialization Stage</h3>
-          <div class="timeline-role">Application Security Engineer</div>
-
-          <ul>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Obtain CEH certification</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Master cloud security concepts</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Lead secure code review sessions</li>
-            <li><i class="fa-solid fa-arrow-trend-up"></i> Implement automated security testing</li>
-          </ul>
-
-          <div class="badge-grid">
-            <div class="badge">DevSecOps</div>
-            <div class="badge">AWS</div>
-            <div class="badge">Kubernetes</div>
-            <div class="badge">Cloud Security</div>
-          </div>
-        </div>
-
+      <div class="glass timeline-card">
+        <div class="timeline-period">Long-Term Visionary Roadmap (3–5 Years)</div>
+        <h3>Senior Secure Software Engineering Specialist</h3>
+        <p class="timeline-role">Theme: Enterprise DevSecOps Integration & Ecosystem Leadership</p>
+        
+        <ul>
+          <li>
+            <i class="fa-solid fa-cloud-shield"></i> 
+            <strong>Target Certification — AWS Certified Security (Specialty):</strong> As decentralized systems scale, achieving this certification proves my capability in securing production-grade cloud environments and microservices.
+          </li>
+          <li>
+            <i class="fa-solid fa-diagram-project"></i> 
+            <strong>DevSecOps Pipeline Mastery:</strong> Move beyond manual code scanning to engineer completely automated, continuous security auditing checks built right into real-time deployment configurations.
+          </li>
+          <li>
+            <i class="fa-solid fa-shield-halved"></i> 
+            <strong>Architectural Level Engineering:</strong> Move into senior software development tiers where I can draft high-level, multi-layered system models and build out comprehensive security frameworks for full development units.
+          </li>
+          <li>
+            <i class="fa-solid fa-bullseye"></i> 
+            <strong>Ultimate Career Milestone:</strong> Establish my career footprint as a Senior Secure Software Engineer, trusted to engineer enterprise-level web architectures where functionality and system defenses operate as a singular unit.
+          </li>
+        </ul>
       </div>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
   <section id="projects">
     <div class="container">
