@@ -792,87 +792,106 @@
   color: white;
   cursor: pointer;
 }	
-/*STYLE FOR REFLECTION*/
-/* Container layout */
+
+/* ==========================================================================
+   STYLE FOR REFLECTION (Pill Tag and Glass Container Layout)
+   ========================================================================== */
+
 .reflection-container {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 100%; /* Adapts flawlessly within your wrapper constraints */
+  margin-top: 20px;
 }
 
-/* Tabs container row */
-.folder-tabs {
+/* Row wrapper for the pill tags */
+.reflection-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: -1px; /* Blends button border with the box below */
-  position: relative;
-  z-index: 2;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
-/* Base styling for each tab button */
-.tab-btn {
-  background: rgba(255, 255, 255, 0.05);
-  color: #a0a5b5;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: none;
-  padding: 10px 16px;
+/* Custom button state designed to match your Soft Skills tags */
+.reflection-tags .tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 0.9rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  border-radius: 999px; /* Replicates Soft Skills pill look */
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover and Active state color matching your screenshots */
-.tab-btn:hover {
-  background: rgba(147, 51, 234, 0.2); /* Soft purple tint */
-  color: #fff;
+/* Hover effect inherits your global violet tone */
+.reflection-tags .tab-btn:hover {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--white);
+  border-color: rgba(139, 92, 246, 0.4);
 }
 
-.tab-btn.active {
-  background: #1e2230; /* Matches your background card color */
-  color: #c084fc; /* Bright neon purple accent */
-  border-color: rgba(255, 255, 255, 0.2);
-  font-weight: bold;
+/* Active Pill Style matches your layout highlight */
+.reflection-tags .tab-btn.active {
+  background: rgba(139, 92, 246, 0.22);
+  color: #d8b4fe; /* Matches your portfolio's lavender accent font */
+  border-color: var(--violet);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
 }
 
-/* Content Container matching your card glassmorphism box */
-.folder-body {
-  background: #1e2230; 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  border-top-left-radius: 0px; /* Gives the folder tab feel */
-  padding: 30px;
-  min-height: 250px;
+/* Custom pad alignment inside your pre-defined glass container */
+.reflection-card-body {
+  padding: 40px;
+  min-height: 260px;
 }
 
-/* Hide content modules by default */
-.tab-content {
+/* Prevent text shifting on card hover transform */
+.reflection-card-body.glass:hover {
+  transform: none; 
+  border-color: var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Hide inactive tabs */
+.reflection-card-body .tab-content {
   display: none;
 }
 
-/* Display active module text smoothly */
-.tab-content.active-content {
+/* Show active content with your native timing preferences */
+.reflection-card-body .tab-content.active-content {
   display: block;
-  animation: fadeIn 0.4s ease;
+  animation: smoothReflectionFade 0.45s ease;
+}
+
+.tab-content h3 {
+  color: var(--white);
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .tab-content p {
   text-align: justify;
-  line-height: 1.7;
-  color: #cbd5e1;
+  line-height: 1.85;
+  color: var(--text);
+  font-size: 0.96rem;
 }
 
-.tab-content h3 {
-  color: #fff;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
+@keyframes smoothReflectionFade {
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive collapse safety */
+@media (max-width: 768px) {
+  .reflection-card-body {
+    padding: 24px;
+  }
+  .reflection-tags .tab-btn {
+    width: 100%; /* Fluid full-width vertical layout on mobile devices */
+    text-align: center;
+  }
 }
 	  
   </style>
@@ -1230,21 +1249,21 @@
   </section>
 
   <section id="reflection">
-<div class="container">
+<div class="reflection-container">
   
-  <div class="folder-tabs">
-    <button class="tab-btn active" onclick="openTab(event, 'motivation')">Motivation</button>
+  <div class="reflection-tags">
+    <button class="tab-btn active" onclick="openTab(event, 'motivation')">My Motivation</button>
     <button class="tab-btn" onclick="openTab(event, 'value')">Value Offered</button>
-    <button class="tab-btn" onclick="openTab(event, 'suitability')">Suitability</button>
+    <button class="tab-btn" onclick="openTab(event, 'suitability')">Why Hire Me</button>
     <button class="tab-btn" onclick="openTab(event, 'reflection-skills')">My Skills</button>
     <button class="tab-btn" onclick="openTab(event, 'strengths')">Strengths & Weaknesses</button>
-    <button class="tab-btn" onclick="openTab(event, 'hiring')">Why Hire Me</button>
+    <button class="tab-btn" onclick="openTab(event, 'hiring')">Company Selection</button>
   </div>
 
-  <div class="folder-body">
+  <div class="reflection-card-body glass">
     
     <div id="motivation" class="tab-content active-content">
-      <h3>My Motivation for Joining the Company</h3>
+      <h3>My Motivation for Joining Dell Technologies</h3>
       <p>I want to work for Dell Technologies because it is a global leader in scalable enterprise software and infrastructure security. As a developer who believes software engineering and cybersecurity must go hand-in-hand, I see Dell as the ultimate environment to build modern applications within an internationally integrated ecosystem. Dell’s commitment to secure-by-design development perfectly matches my vision to create software that is highly efficient, deeply protected, and user-friendly.</p>
     </div>
 
